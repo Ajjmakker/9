@@ -1,0 +1,40 @@
+#include <stdio.h>
+int minSteps (int x, int y)
+{
+   if (x == y)
+   {
+      return 0;
+   }
+
+   // Змінна count = 1, а результат = різниці
+   int count = 1;
+   
+   // Якщо результат більше 1, то виконується код 
+   int difference = y - x;
+
+   while (difference > count)
+   {
+      if (difference <= 2 * count)
+      {
+         difference = 0;
+      }
+      count++;
+   }
+
+   return count;
+}
+
+int main()
+{
+//результат чисел
+   int x, y;
+   printf("x: ");
+   scanf("%d", &x);
+   printf("y: ");
+   scanf("%d", &y);
+
+   // Виведення
+   printf("\nResult: %d", minSteps (x, y));
+
+   return 0;
+}
